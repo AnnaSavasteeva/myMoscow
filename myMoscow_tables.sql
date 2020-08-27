@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 23, 2019 at 08:48 PM
+-- Generation Time: Aug 27, 2020 at 04:39 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.32
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `myMoscow`
 --
-CREATE DATABASE IF NOT EXISTS `myMoscow` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `myMoscow`;
 
 -- --------------------------------------------------------
 
@@ -452,7 +450,7 @@ ALTER TABLE `routs`
 -- AUTO_INCREMENT for table `routsReserved`
 --
 ALTER TABLE `routsReserved`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `services`
@@ -476,7 +474,7 @@ ALTER TABLE `userComments`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `usersMessages`
