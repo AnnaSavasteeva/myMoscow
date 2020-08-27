@@ -1,9 +1,5 @@
 <?php
-// БД
-// Подключение к БД 'myMoscow'
 include_once($_SERVER['DOCUMENT_ROOT'] . '/config/config.php');
-
-// Получение контактов (таблица 'contacts')
 $query = "SELECT * FROM `contacts`";
 $resultContacts = mysqli_query($db, $query);
 
@@ -22,30 +18,22 @@ $resultContacts = mysqli_query($db, $query);
     <!-- Intro -->
     <section class="topInfo">
         <div class="wrapperTop bgContacts">
-            <!-- Шапка -->
-                <?php
-                // $linkClassMain = 'class="hide"';
-                // $linkClassRouts = '';
-                // $linkClassContacts = 'class="notActive"';
-                // include_once($_SERVER['DOCUMENT_ROOT'] . '/modules/header.php');
-                ?>
-
             <header>
-                <!-- Лого -->
+                <!-- Logo -->
                 <a href="/" class="logoI"><img src="images/logo/logo_mixColorText.svg" alt="Logo"></a>
 
-                <!-- Навигация -->
+                <!-- Navigation -->
                 <nav>
                     <a href="/" class="hide">На главную</a>
                     <a href="index.php#service">Наши услуги</a>
-                    <a href="routs.php" target="blank">Маршруты</a>
+                    <a href="routs.php">Маршруты</a>
                     <a href="index.php#about">О нас</a>
                     <a href="index.php#foto">Фотоотчеты</a>
                     <a href="index.php#testimon">Отзывы</a>
                     <a href="#news">Новости</a>
                     <a href="#" class="notActive">Контакты</a>
 
-                    <!-- Кнопка отображения меню для экрана <780px -->
+                    <!-- Menu button for screens <780px -->
                     <div class="menu-btn">
                         <div class="btn-lines"></div>
                         <div class="btn-lines"></div>
@@ -71,10 +59,8 @@ $resultContacts = mysqli_query($db, $query);
     </section>
 
 
-    <!-- Основное содержимое -->
+    <!-- Main content -->
     <main>
-
-        <!-- Связь -->
         <section class="wrapperContactUs" id="contact">
                 <h2>Контактная информация</h2>
                 
@@ -92,17 +78,16 @@ $resultContacts = mysqli_query($db, $query);
         </section>
 
 
-        <!-- Карта -->
+        <!-- Map -->
         <section class="map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.9878951089627!2d37.64559751563289!3d55.776082080559576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a7a220c9e5f%3A0x262ed08bf1f58a9c!2z0JHQvtC70YzRiNCw0Y8g0KHQv9Cw0YHRgdC60LDRjyDRg9C7LiwgMTIsINCc0L7RgdC60LLQsCwgMTI5MDkw!5e0!3m2!1sru!2sru!4v1573723611439!5m2!1sru!2sru" allowfullscreen="">
             </iframe>
         </section>
 
 
-        <!-- Адрес и форма обратной связи -->
+        <!-- Address and form -->
         <section class="wrapperAddressForm">
-            
-            <!-- Адрес и соц. сети -->
+
             <div class="address">
                 <h3 class="contacts">Наш адрес</h3>
                 <?php
@@ -111,7 +96,6 @@ $resultContacts = mysqli_query($db, $query);
                 ?> 
             </div>
 
-            <!-- Форма обратной связи -->
             <div class="form">
                 <h3 class="contacts">Обратная связь</h3>
                 <form action="handlers/form_Contact.php" method="POST" class="contactPage">
@@ -133,12 +117,8 @@ $resultContacts = mysqli_query($db, $query);
     </main>
 
 
-    <!-- Подвал и кнопка «В начало» -->
     <?php
-        // Подвал
         include_once($_SERVER['DOCUMENT_ROOT']) . '/modules/footer.php';
-
-        // «В начало»
         include_once($_SERVER['DOCUMENT_ROOT']) . '/modules/buttonToUp.php';
     ?>
 

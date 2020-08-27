@@ -1,8 +1,5 @@
 <?php
-// Подключение к БД 'myMoscow'
 include_once($_SERVER['DOCUMENT_ROOT'] . '/config/config.php');
-
-// Получение данных по маршрутам (таблица 'routs')
 $query = "SELECT * FROM `routs`";
 $resultRouts = mysqli_query($db, $query);
 
@@ -21,19 +18,11 @@ $resultRouts = mysqli_query($db, $query);
     <!-- Intro -->
     <section class="topInfo">
         <div class="wrapperTop bgRouts">
-            <!-- Шапка -->
-            <?php
-                // $linkClassMain = 'class="hide"';
-                // $linkClassRouts = 'class="notActive"';
-                // $linkClassContacts = '';
-                // include_once($_SERVER['DOCUMENT_ROOT'] . '/modules/header.php');
-            ?>
-
             <header>
-                <!-- Лого -->
+                <!-- Logo -->
                 <a href="/" class="logoI"><img src="images/logo/logo_mixColorText.svg" alt="Logo"></a>
 
-                <!-- Навигация -->
+                <!-- Navigation -->
                 <nav>
                     <a href="/" class="hide">На главную</a>
                     <a href="index.php#service">Наши услуги</a>
@@ -42,9 +31,9 @@ $resultRouts = mysqli_query($db, $query);
                     <a href="index.php#foto">Фотоотчеты</a>
                     <a href="index.php#testimon">Отзывы</a>
                     <a href="#news">Новости</a>
-                    <a href="contacts.php" target="blank">Контакты</a>
+                    <a href="contacts.php">Контакты</a>
 
-                    <!-- Кнопка отображения меню для экрана <780px -->
+                    <!-- Menu button for screens <780px -->
                     <div class="menu-btn">
                         <div class="btn-lines"></div>
                         <div class="btn-lines"></div>
@@ -73,7 +62,7 @@ $resultRouts = mysqli_query($db, $query);
     </section>
 
 
-    <!-- Маршруты -->
+    <!-- Routs -->
     <main>
         <section class="wrapperRoutsPOP">
             <h2>Популярные маршруты</h2>
@@ -82,16 +71,11 @@ $resultRouts = mysqli_query($db, $query);
                 <div class="rout">
                     <img class="routImage mCity" src="images/routs/<?= $row['image'] ?>" alt="<?= $row['altText'] ?>">
                     <div class="routText">
-                        <!-- Описание экскурсии -->
                         <h3><?= $row['routName'] ?></h3>
                         <?= $row['routDescription'] ?>
-
-                        <!-- Стоимость -->
                         <p class="price"><?= $row['duration'] ?>&nbsp;&mdash; <?= $row['price'] ?></p>
-
-                        <!-- «Забронировать» -->
                         <div>
-                            <a href="" class="button reserve" target="blank" data-name="<?= $row['routName'] ?>">Забронировать</a>
+                            <a href="" class="button reserve" data-name="<?= $row['routName'] ?>">Забронировать</a>
                         </div>
                     </div>
                 </div>
@@ -101,24 +85,17 @@ $resultRouts = mysqli_query($db, $query);
     </main>
 
 
-    <!-- Подвал и кнопка «В начало» -->
     <?php
-        // Подвал 
         include_once($_SERVER['DOCUMENT_ROOT']) . '/modules/footer.php';
-        
-        // «В начало»
         include_once($_SERVER['DOCUMENT_ROOT']) . '/modules/buttonToUp.php';
     ?>
 
 
-    <!-- Форма записи на экскурсию -->
+    <!-- Form for booking -->
     <div class="formReserveWrapper">
 
         <div class="formReserve">
-            <!-- Лого -->
             <a href='/' class='logoI'><img src='/images/logo/logo_mixColorText.svg' alt='Logo'></a>
-            
-            <!-- Форма -->
             <form action="handlers/form_Routs.php" method="POST" class="routPage">
                 <input type="text" name="routName">
                 <input type="text" name="name" placeholder="ФИО">
@@ -133,7 +110,6 @@ $resultRouts = mysqli_query($db, $query);
             </form>
         </div>
 
-        <!-- Кнопка закрытия формы -->
         <div class="closeForm" title="Close"></div>
 
     </div>

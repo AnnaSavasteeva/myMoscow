@@ -1,20 +1,19 @@
 <?php
-// Подключение к БД 'myMoscow'
 include_once($_SERVER['DOCUMENT_ROOT'] . '/config/config.php');
 
-// Получение данных по услугам (таблица 'services')
+// services
 $query = "SELECT * FROM `services`";
 $resultServices = mysqli_query($db, $query);
 
-// Получение данных о компании (таблица 'about')
+// about
 $query = "SELECT * FROM `about`";
 $resultAbout = mysqli_query($db, $query);
 
-// Получение данных для фотоотчета (таблица 'fotoReports')
+// fotoReports
 $query = "SELECT * FROM `fotoReports`";
 $resultFoto = mysqli_query($db, $query);
 
-// Получение данных для отзывов (таблица 'userComments')
+// userComments
 $query = "SELECT * FROM `userComments`";
 $resultComments = mysqli_query($db, $query);
 
@@ -34,30 +33,22 @@ $resultComments = mysqli_query($db, $query);
     <!-- Intro -->
     <section class="topInfo">
         <div class="wrapperTop">
-            <!-- Шапка -->
-            <?php
-                // $linkClassMain = 'class="hide notActive"';
-                // $linkClassRouts = '';
-                // $linkClassContacts = '';
-                // include_once($_SERVER['DOCUMENT_ROOT'] . '/modules/header.php');
-            ?>
-
             <header>
-                <!-- Лого -->
+                <!-- Logo -->
                 <a href="/" class="logoI"><img src="images/logo/logo_mixColorText.svg" alt="Logo"></a>
 
-                <!-- Навигация -->
+                <!-- Navigation -->
                 <nav>
                     <a href="/" class="hide notActive">На главную</a>
                     <a href="#service">Наши услуги</a>
-                    <a href="routs.php" target="blank">Маршруты</a>
+                    <a href="routs.php">Маршруты</a>
                     <a href="#about">О нас</a>
                     <a href="#foto">Фотоотчеты</a>
                     <a href="#testimon">Отзывы</a>
                     <a href="#news">Новости</a>
-                    <a href="contacts.php" target="blank">Контакты</a>
+                    <a href="contacts.php">Контакты</a>
 
-                    <!-- Кнопка отображения меню для экрана <780px -->
+                    <!-- Menu button for screens <780px -->
                     <div class="menu-btn">
                         <div class="btn-lines"></div>
                         <div class="btn-lines"></div>
@@ -66,7 +57,6 @@ $resultComments = mysqli_query($db, $query);
                 </nav>
             </header>
 
-            <!-- Текст -->
             <div class="textInfo">
                 <h1>Необычная Москва</h1>
                 <p>
@@ -80,17 +70,17 @@ $resultComments = mysqli_query($db, $query);
             </div>
 
             <div>
-                <a href="routs.php" class="button" target="blank">Выбрать маршрут</a>
+                <a href="routs.php" class="button">Выбрать маршрут</a>
             </div>
         </div>
 
     </section>
 
 
-    <!-- Основное содержимое -->
+    <!-- Main content -->
     <main>
         
-        <!-- Услуги -->
+        <!-- Services -->
         <section class="wrapperService" id="service">
             <h2>Что мы предлагаем</h2>
 
@@ -113,7 +103,7 @@ $resultComments = mysqli_query($db, $query);
         </section>
 
 
-        <!-- «О нас» -->
+        <!-- About us -->
         <section class="wrapperAbout" id="about">
             <div class="aboutPicture"></div>
             <div class="aboutText">
@@ -123,13 +113,12 @@ $resultComments = mysqli_query($db, $query);
                     <p><?= $row['aboutText'] ?></p>
                 <?php endwhile; ?>
                 
-                <!-- Переход на страницу «Контакты» -->
-                <a href="contacts.php" target="blank" class="button">Наши контакты</a>
+                <a href="contacts.php" class="button">Наши контакты</a>
             </div>
         </section>
 
 
-        <!-- Фотографии -->
+        <!-- Photo -->
         <section class="wrapperFoto" id="foto">
             <h2>Москва в фотографиях</h2>
 
@@ -143,7 +132,7 @@ $resultComments = mysqli_query($db, $query);
         </section>
 
 
-        <!-- Отзывы -->
+        <!-- Testimonials -->
         <section class="wrapperComments" id="testimon">
             <h2>Отзывы</h2>
             <div class="commentSlider">
@@ -161,7 +150,6 @@ $resultComments = mysqli_query($db, $query);
                     <?php endwhile; ?>
                 </div>
 
-                <!-- Кнопки перехода от слайда к слайду -->
                 <div class="sliderBtn">
                     <span class="leftArrow" title="Назад"></span>
                     <span class="rightArrow" title="Вперед"></span>
@@ -172,12 +160,8 @@ $resultComments = mysqli_query($db, $query);
     </main>
 
 
-    <!-- Подвал и кнопка «В начало» -->
     <?php
-        // Подвал
         include_once($_SERVER['DOCUMENT_ROOT']) . '/modules/footer.php';
-        
-        // «В начало»
         include_once($_SERVER['DOCUMENT_ROOT']) . '/modules/buttonToUp.php';
     ?>
 

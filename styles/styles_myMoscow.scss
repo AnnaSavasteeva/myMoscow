@@ -111,7 +111,7 @@ $trans: .25s;
         font-family: ptSans;
         font-size: 16px;
         line-height: 1.5;
-        // text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
         color: $textColor;
     }
 
@@ -133,7 +133,7 @@ $trans: .25s;
       color: $logoPattern;
     }
 
-    // Название компании в тексте
+    // Company name in text
     .logoT {
       @include logoText();
 
@@ -144,7 +144,7 @@ $trans: .25s;
 
 
 
-    // Заголовки
+    // Headings
     h1, h2, h3, h4 {
       margin: 0;
     }
@@ -204,7 +204,7 @@ $trans: .25s;
 
 
 
-    // Ссылки
+    // Anchors
     a, a:visited {
       color: $logoPattern;
       text-decoration: none;
@@ -232,7 +232,7 @@ $trans: .25s;
             cursor: default;
           }
 
-          // Кнопка «В начало»
+          // Button to the top
           &.up {
             opacity: .5;
             border-left: 17px solid transparent;
@@ -267,7 +267,7 @@ $trans: .25s;
 
 
 
-    // Форма
+    // Form
     input, textarea {
       -webkit-appearance: none;
       outline: none;
@@ -282,7 +282,6 @@ $trans: .25s;
             width: 100%;
             color: $logoPattern;
             @include formInputs();
-            // Убрать подсветку активного поля (того, где курсор)
             outline: none;
 
                 &:nth-of-type(1) {margin-top: 5px;}
@@ -310,7 +309,6 @@ $trans: .25s;
                   @include button();
                   transition: $trans;
                   cursor: $cursor;
-                  // Убрать подсветку активного поля (того, где курсор)
                   outline: none;
 
                       &:hover {
@@ -334,12 +332,10 @@ $trans: .25s;
             min-height: 500px;
             background: url("../images/main/Basil.svg") right 15px bottom 0 / 40% no-repeat;
 
-                // Картинка к странице «Контакты»
+                // Image to page 'Contacts'
                 &.bgContacts {background: url("../images/contacts/contact_Info.svg") right 15px bottom 0 / 40% no-repeat;}
 
-                // Картинка к странице «Маршруты»
-                // &.bgRouts {background-image: url("../images/routs/routs_map.svg");}
-                // &.bgRouts {background-image: url("../images/routs/routs_map1_bear.svg");}
+                // Image to page 'Routs'
                 &.bgRouts {background-image: url("../images/routs/routs_map2_bear.svg");}
                 
                 header {
@@ -368,13 +364,13 @@ $trans: .25s;
                               .menu-btn {display: none;}
                       }
 
-                      // Под экран < 780px
+                      // For screens < 780px
                       @media (max-width: 780px) {
                         justify-content: center;
 
-                        // На всякий случай - чтобы не появилась горизонтальная полоса прокрутки,
-                        // т.к. для позиционирования иконки меню-гамбургера используется отрицательный сдвиг 
-                        // от правой границы родителя
+                        // To avoid horizontal horizontal scroll bar,
+                        // because menu icon is positioned with negative shift
+                        // from right side
                         overflow-x: hidden;
 
                             .logoI {margin-right: 0;}
@@ -453,7 +449,7 @@ $trans: .25s;
 
 
 
-// Услуги
+// Services
     .wrapperService {
       @include wrapper_width();
       padding-bottom: 35px;
@@ -492,7 +488,6 @@ $trans: .25s;
                       @media (max-width: 780px) {
                         margin: 0 0 35px;
                         flex-basis: auto;
-                        // flex-direction: column;
                       }
                 }
           }
@@ -500,7 +495,7 @@ $trans: .25s;
 
 
 
-// Раздел «О нас»
+// About us
     .wrapperAbout {
       @include wrapper_Flex();
 
@@ -541,14 +536,13 @@ $trans: .25s;
 
 
 
-// Фотографии
+// Photo
   .wrapperFoto {
     @include wrapper_width();
     padding: 70px 0 0;
     max-width: 100%;
 
         .brief {
-          // Чтобы текст не прилипал к границам окна браузера при уменьшении ширины экрана.
           margin-left: 15px;
           margin-right: 15px;
         }
@@ -571,7 +565,7 @@ $trans: .25s;
 
 
 
-// Отзывы
+// Testimonials
   .wrapperComments {
     @include wrapper_width();
 
@@ -665,7 +659,7 @@ $trans: .25s;
 
 
 
-// Подвал
+// Footer
   footer {
       .wrapperEndInfo {
         @include wrapper_width();
@@ -682,7 +676,7 @@ $trans: .25s;
                     width: 240px;
                     margin-right: 70px;
 
-                        // Для страницы «Контакты»
+                        // For page 'Contacts'
                         &.noAddressLogo {
                           width: 90px;
                         }
@@ -694,18 +688,16 @@ $trans: .25s;
                         address {margin-top: 20px;}
 
                         .socNet {margin-top: 25px;}
-
-                        // .noAddress {display: none;}
                   }
     
                   .news {
                     flex-grow: 1;
-                    // 340 = 240 (W контактов) + 30 (padding у wrapperEndInfo) + 70 (для отступа от блока контактов)
+                    // 340 = 240 (contacts width) + 30 (wrapperEndInfo padding) + 70 (indent from contacts)
                     width: calc(100% - 340px);
 
-                        // Для страницы «Контакты»
+                        // For page 'Contacts'
                         &.noAddressNews {
-                          // 190 = 90 (W логотипа) + 30 + 70
+                          // 190 = 90 (logo width) + 30 + 70
                           width: calc(100% - 190px);
                         }
     
@@ -721,7 +713,7 @@ $trans: .25s;
                         } 
                   }
 
-                  // Адаптивность
+                  // Adaptiveness
                   @media (max-width: 780px) {
                       @include wrapper_Flex($fdir: column);
 
@@ -757,9 +749,9 @@ $trans: .25s;
 
 
 
-// СТРАНИЦА «КОНТАКТЫ»
+// 'CONTACTS' page
 
-// Связь
+// Contact with us
     .wrapperContactUs {
       @include wrapper_width();
       padding-bottom: 35px;
@@ -778,7 +770,7 @@ $trans: .25s;
                 min-width: 25%;
               }
 
-              // Адаптивность
+              // Adaptiveness
               @media (max-width: 780px) {
                 .contactItem {
                   margin-left: 0;
@@ -789,7 +781,7 @@ $trans: .25s;
     }
 
 
-// Карта
+// Map
     .map {
       @include wrapper_width();
       padding: 0 15px;
@@ -802,7 +794,7 @@ $trans: .25s;
     }
 
 
-// Адрес и форма обратной связи
+// Address and form
   .wrapperAddressForm {
     @include wrapper_width();
     padding-top: 0;
@@ -830,7 +822,7 @@ $trans: .25s;
           min-width: 65%;
         }
 
-        // Адаптивность
+        // Adaptiveness
         @media (max-width: 780px) {
           .address, .form {
             margin-left: 0;
@@ -843,7 +835,7 @@ $trans: .25s;
 
 
 
-// СТРАНИЦА «МАРШРУТЫ»
+// 'ROUTS' page
   .wrapperRoutsPOP {
     @include wrapper_width();
     max-width: 1280px;
@@ -855,7 +847,6 @@ $trans: .25s;
           margin-bottom: 70px;
           border-right: 20px solid $mainColor;
           @include wrapper_Flex();
-          // align-items: flex-start;
 
               &:nth-of-type(even) {
                 border-left: 20px solid $mainColor;
@@ -875,12 +866,7 @@ $trans: .25s;
                 width: 100%;
                 height: auto;
 
-                    // &.mCity {@include routsFoto('../images/routs/Moscow_City.jpg');}
-
-                    // &.stalin {@include routsFoto('../images/routs/Stalin.jpg');}
-
                     &.masterAndMargo {
-                      // @include routsFoto('../images/routs/Bulgakov.jpg');
                       object-position: 70% 0;
 
                       @media (max-width: 860px) {
@@ -890,8 +876,6 @@ $trans: .25s;
                         object-position: 60% 0;
                       }
                     }
-
-                    // &.metro {@include routsFoto('../images/routs/Metro.jpg');}
               }
 
               .routText {
@@ -932,7 +916,7 @@ $trans: .25s;
         }
   }
 
-  // Форма бронирования экскурсии
+  // Form
   .formReserveWrapper {
     padding: 15px;
     position: fixed;
@@ -946,7 +930,6 @@ $trans: .25s;
     align-items: center;
     display: none;
     background: rgba(255, 193, 85, 0.95);
-    // background: $mainColor;
 
         .formReserve {
           display: inline-block;
@@ -980,7 +963,7 @@ $trans: .25s;
         }      
   }
 
-  // Иконка закрытия окна с формой бронирования
+  // Form close icon
   .closeForm {
     width: 20px;
     height: 20px;
@@ -1019,7 +1002,7 @@ $trans: .25s;
 
 
 
-// ОТВЕТ ПОЛЬЗОВАТЕЛЮ ОБ ОТПРАВКЕ ФОРМЫ
+// ANSWER to user about form submition (for both forms)
 .userResponseWrapper {
   @include wrapper_Flex(center);
   align-items: center;
@@ -1029,7 +1012,6 @@ $trans: .25s;
   bottom: 0;
   left: 0;
   right: 0;
-  // z-index: 99;   
 
       .userResponse {
         @include wrapper_Flex(center, column);
