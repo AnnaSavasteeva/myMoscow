@@ -3,60 +3,32 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/config/config.php');
 $query = "SELECT * FROM `contacts`";
 $resultContacts = mysqli_query($db, $query);
 
+$title = 'Контакты';
+
 ?>
 
 
 
-<!-- HEAD -->
+<!-- HEADER -->
 <?php
-    $title = 'Контакты';
-    include_once($_SERVER['DOCUMENT_ROOT'] . '/modules/head.php');
+    include_once($_SERVER['DOCUMENT_ROOT'] . '/modules/header.php');
 ?>
 
-<body id="top">
-    
-    <!-- Intro -->
-    <section class="topInfo">
-        <div class="wrapperTop bgContacts">
-            <header>
-                <!-- Logo -->
-                <a href="/" class="logoI"><img src="images/logo/logo_mixColorText.svg" alt="Logo"></a>
-
-                <!-- Navigation -->
-                <nav>
-                    <a href="/" class="hide">На главную</a>
-                    <a href="index.php#service">Наши услуги</a>
-                    <a href="routs.php">Маршруты</a>
-                    <a href="index.php#about">О нас</a>
-                    <a href="index.php#foto">Фотоотчеты</a>
-                    <a href="index.php#testimon">Отзывы</a>
-                    <a href="#news">Новости</a>
-                    <a href="#" class="notActive">Контакты</a>
-
-                    <!-- Menu button for screens <780px -->
-                    <div class="menu-btn">
-                        <div class="btn-lines"></div>
-                        <div class="btn-lines"></div>
-                        <div class="btn-lines"></div>
-                    </div>
-                </nav>
-            </header>
-
-            <div class="textInfo">
-                <h1>Обратная связь</h1>   
-                <p>
-                    Если у&nbsp;вас есть вопросы, идеи маршрутов, конструктивные замечания или предложения&nbsp;&mdash; пожалуйста, свяжитесь
-                    с&nbsp;нами любым удобным для вас способом&nbsp;&mdash; мы открыты для общения! А&nbsp;еще лучше&nbsp;&mdash; приезжайте к&nbsp;нам в&nbsp;гости
-                    и&nbsp;вступайте в&nbsp;наш клуб&nbsp;&mdash; там, помимо замечательных людей и&nbsp;интересного общения, есть еще вкусный кофе, чай и печенье!
-                </p>
-            </div>
-
-            <div class="forButtonTop">
-                <a href="/" class="button">Вернуться на главную</a>
-            </div>
+        <div class="textInfo">
+            <h1>Обратная связь</h1>   
+            <p>
+                Если у&nbsp;вас есть вопросы, идеи маршрутов, конструктивные замечания или предложения&nbsp;&mdash; пожалуйста, свяжитесь
+                с&nbsp;нами любым удобным для вас способом&nbsp;&mdash; мы открыты для общения! А&nbsp;еще лучше&nbsp;&mdash; приезжайте к&nbsp;нам в&nbsp;гости
+                и&nbsp;вступайте в&nbsp;наш клуб&nbsp;&mdash; там, помимо замечательных людей и&nbsp;интересного общения, есть еще вкусный кофе, чай и печенье!
+            </p>
         </div>
 
-    </section>
+        <div>
+            <a href="/" class="button">Вернуться на главную</a>
+        </div>
+    </div>
+
+</section>
 
 
     <!-- Main content -->
@@ -117,13 +89,6 @@ $resultContacts = mysqli_query($db, $query);
     </main>
 
 
-    <?php
-        include_once($_SERVER['DOCUMENT_ROOT']) . '/modules/footer.php';
-        include_once($_SERVER['DOCUMENT_ROOT']) . '/modules/buttonToUp.php';
-    ?>
-
-
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
-</html>
+<?php
+    include_once($_SERVER['DOCUMENT_ROOT']) . '/modules/footer.php';
+?>

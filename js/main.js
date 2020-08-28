@@ -1,7 +1,7 @@
 // NAVIGATION
 
 // Smooth scroll to the page sections
-$('[href*="#"], .up').click(function (e) {
+$('[href^="#"], .up').click(function (e) {
     let id = $(this).attr('href');
     $('html, body').animate({
         scrollTop: $(id).offset().top

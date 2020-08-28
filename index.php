@@ -17,64 +17,35 @@ $resultFoto = mysqli_query($db, $query);
 $query = "SELECT * FROM `userComments`";
 $resultComments = mysqli_query($db, $query);
 
+$title = 'Главная';
+
 ?>
 
 
 
-<!-- HEAD -->
+<!-- HEADER -->
 <?php
-    $title = 'Главная';
-    include_once($_SERVER['DOCUMENT_ROOT'] . '/modules/head.php');
+    include_once($_SERVER['DOCUMENT_ROOT'] . '/modules/header.php');
 ?>
 
-<!-- BODY -->
-<body id="top">
-
-    <!-- Intro -->
-    <section class="topInfo">
-        <div class="wrapperTop">
-            <header>
-                <!-- Logo -->
-                <a href="/" class="logoI"><img src="images/logo/logo_mixColorText.svg" alt="Logo"></a>
-
-                <!-- Navigation -->
-                <nav>
-                    <a href="/" class="hide notActive">На главную</a>
-                    <a href="#service">Наши услуги</a>
-                    <a href="routs.php">Маршруты</a>
-                    <a href="#about">О нас</a>
-                    <a href="#foto">Фотоотчеты</a>
-                    <a href="#testimon">Отзывы</a>
-                    <a href="#news">Новости</a>
-                    <a href="contacts.php">Контакты</a>
-
-                    <!-- Menu button for screens <780px -->
-                    <div class="menu-btn">
-                        <div class="btn-lines"></div>
-                        <div class="btn-lines"></div>
-                        <div class="btn-lines"></div>
-                    </div>
-                </nav>
-            </header>
-
-            <div class="textInfo">
-                <h1>Необычная Москва</h1>
-                <p>
-                    <span class="logoT"><span>My</span>.Moscow</span>&nbsp;&mdash; агентство интересных маршрутов&nbsp;&mdash; приглашает на самые разные экскурсии по&nbsp;Москве: автобусные и&nbsp;пешеходные,
-                    на&nbsp;целый день или несколько часов, на&nbsp;свежем воздухе или по&nbsp;музеям&nbsp;&mdash; у&nbsp;нас более двадцати авторских экскурсий
-                    по&nbsp;городу.
-                </p>
-                <p>
-                    Выбирайте маршрут и&nbsp;узнавайте Москву вместе с&nbsp;нами!
-                </p>
-            </div>
-
-            <div>
-                <a href="routs.php" class="button">Выбрать маршрут</a>
-            </div>
+        <div class="textInfo">
+            <h1>Необычная Москва</h1>
+            <p>
+                <span class="logoT"><span>My</span>.Moscow</span>&nbsp;&mdash; агентство интересных маршрутов&nbsp;&mdash; приглашает на самые разные экскурсии по&nbsp;Москве: автобусные и&nbsp;пешеходные,
+                на&nbsp;целый день или несколько часов, на&nbsp;свежем воздухе или по&nbsp;музеям&nbsp;&mdash; у&nbsp;нас более двадцати авторских экскурсий
+                по&nbsp;городу.
+            </p>
+            <p>
+                Выбирайте маршрут и&nbsp;узнавайте Москву вместе с&nbsp;нами!
+            </p>
         </div>
 
-    </section>
+        <div>
+            <a href="routs.php" class="button">Выбрать маршрут</a>
+        </div>
+    </div>
+
+</section>
 
 
     <!-- Main content -->
@@ -159,14 +130,6 @@ $resultComments = mysqli_query($db, $query);
 
     </main>
 
-
-    <?php
-        include_once($_SERVER['DOCUMENT_ROOT']) . '/modules/footer.php';
-        include_once($_SERVER['DOCUMENT_ROOT']) . '/modules/buttonToUp.php';
-    ?>
-
-
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
-</html>
+<?php
+    include_once($_SERVER['DOCUMENT_ROOT']) . '/modules/footer.php';
+?>

@@ -1,12 +1,11 @@
 <?php
-    // Подключение к БД 'myMoscow'
     include_once($_SERVER['DOCUMENT_ROOT'] . '/config/config.php');
 
-    // Получение данных для новостей (таблица 'news')
+    // 'news'
     $query = "SELECT * FROM `news`";
     $resultNews = mysqli_query($db, $query);
 
-    // Присвоение CSS-стилей элементам в зависимости от страницы
+    // CSS depending on the page
     $logoStyle = 'logoContacts';
     $newsStyle = 'news';
     if ($_SERVER['REQUEST_URI'] === '/contacts.php') {
@@ -18,11 +17,10 @@
 
 <footer>
 
-    <!-- Контакты и новости -->
     <div class="wrapperEndInfo" id="news">
         <div class="contactsNews">
 
-            <!-- Лого и контакты -->
+            <!-- Logo & contacts -->
             <div class="<?= $logoStyle ?>">
                 <a href="/" class="logoI"><img src="images/logo/logo_mixColorText.svg" alt="Logo"></a>           
                 <!-- Адрес и соц. сети, но не на странице «Контакты» -->
@@ -33,12 +31,10 @@
                 ?>
             </div>
             
-            <!-- Новости -->
-            <!-- <div class="news"> -->
+            <!-- News -->
             <div class="<?= $newsStyle ?>">
                 <h4>Последние новости</h4>
 
-                <!-- Добавление данных из БД (таблица 'news') -->
                 <?php while($row = mysqli_fetch_assoc($resultNews)): ?>
                 <p>
                     <span class="date"><?= $row['newsDate'] ?></span>
@@ -56,3 +52,13 @@
     </div>
 
 </footer>
+
+<?php
+    include_once($_SERVER['DOCUMENT_ROOT']) . '/modules/buttonToUp.php';
+?>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

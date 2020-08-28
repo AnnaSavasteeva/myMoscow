@@ -1,24 +1,28 @@
-<!-- Шапка -->
-<header>
-    <!-- Лого -->
-    <a href="/" class="logoI"><img src="/images/logo/logo_mixColorText.svg" alt="Logo"></a>
+<?php
+    include_once($_SERVER['DOCUMENT_ROOT'] . '/modules/head.php');
+?>
 
-    <!-- Навигация -->
-    <nav>
-        <a href="/" <?= $linkClassMain ?>>На главную</a>
-        <a href="index.php#service">Наши услуги</a>
-        <a href="routs.php" target="blank" <?= $linkClassRouts ?>>Маршруты</a>
-        <a href="index.php#about">О нас</a>
-        <a href="index.php#foto">Фотоотчеты</a>
-        <a href="index.php#testimon">Отзывы</a>
-        <a href="index.php#news">Новости</a>
-        <a href="contacts.php" target="blank" <?= $linkClassContacts ?>>Контакты</a>
+<!-- BODY -->
+<body id='top'>
 
-        <!-- Кнопка отображения меню для экрана <780px -->
-        <div class="menu-btn">
-            <div class="btn-lines"></div>
-            <div class="btn-lines"></div>
-            <div class="btn-lines"></div>
-        </div>
-    </nav>
-</header>
+    <!-- Intro -->
+    <section class='topInfo'>
+
+        <div class='wrapperTop <?php
+            // additional class depending on the page
+            if ($_SERVER['REQUEST_URI'] === '/contacts.php') { 
+                echo 'bgContacts';
+            } elseif ($_SERVER['REQUEST_URI'] === '/routs.php') {
+                echo 'bgRouts';
+            } ?>
+        '>
+            
+        <header>
+            <!-- Logo -->
+            <a href='/' class='logoI'><img src='images/logo/logo_mixColorText.svg' alt='Logo'></a>
+
+            <?php
+                include_once($_SERVER['DOCUMENT_ROOT'] . '/modules/navigation.php');
+            ?>
+
+        </header>
