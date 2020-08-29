@@ -1,10 +1,6 @@
 <?php
     include_once($_SERVER['DOCUMENT_ROOT'] . '/config/config.php');
 
-    // 'news'
-    $query = "SELECT * FROM `news`";
-    $resultNews = mysqli_query($db, $query);
-
     // CSS depending on the page
     $logoStyle = 'logoContacts';
     $newsStyle = 'news';
@@ -35,7 +31,10 @@
             <div class="<?= $newsStyle ?>">
                 <h4>Последние новости</h4>
 
-                <?php while($row = mysqli_fetch_assoc($resultNews)): ?>
+                <?php
+                    $resultNews = getData($db, '*', 'news');
+                    while($row = mysqli_fetch_assoc($resultNews)):
+                ?>
                 <p>
                     <span class="date"><?= $row['newsDate'] ?></span>
                     <?= $row['newsText'] ?>

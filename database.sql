@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 27, 2020 at 04:39 PM
+-- Generation Time: Aug 29, 2020 at 11:52 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.32
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `myMoscow`
 --
+CREATE DATABASE IF NOT EXISTS `myMoscow` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `myMoscow`;
 
 -- --------------------------------------------------------
 
@@ -134,6 +136,28 @@ INSERT INTO `news` (`id`, `newsDate`, `newsText`) VALUES
 (1, '31 октября 2019', 'Curabitur felis nibh, lacinia non rhoncus vel, lobortis et lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur felis nibh, lacinia non rhoncus vel, lobortis et lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra,\r\n                    per inceptos himenaeos.'),
 (2, '10 октября 2019', 'Curabitur felis nibh, lacinia non rhoncus vel, lobortis et lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur felis nibh, lacinia non rhoncus vel, lobortis et lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur felis nibh, lacinia non rhoncus vel, lobortis et lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'),
 (3, '26 сентября 2019', 'Curabitur felis nibh, lacinia non rhoncus vel, lobortis et lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pages_all_intro`
+--
+
+CREATE TABLE `pages_all_intro` (
+  `id` int(10) NOT NULL,
+  `page_name` varchar(50) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `description` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `pages_all_intro`
+--
+
+INSERT INTO `pages_all_intro` (`id`, `page_name`, `title`, `description`) VALUES
+(1, 'main', 'Необычная Москва', '<p><span class=\"logoT\"><span>My</span>.Moscow</span>&nbsp;&mdash; агентство интересных маршрутов&nbsp;&mdash; приглашает на самые разные экскурсии по&nbsp;Москве: автобусные и&nbsp;пешеходные, на&nbsp;целый день или несколько часов, на&nbsp;свежем воздухе или по&nbsp;музеям&nbsp;&mdash; у&nbsp;нас более двадцати авторских экскурсий по&nbsp;городу.</p>\r\n<p>Выбирайте маршрут и&nbsp;узнавайте Москву вместе с&nbsp;нами!</p>'),
+(2, 'routs', 'Маршруты', '<p><span class=\"logoT\"><span>My</span>.Moscow</span>&nbsp;&mdash; агентство интересных маршрутов&nbsp;&mdash; приглашает на самые разные экскурсии по&nbsp;Москве: автобусные и&nbsp;пешеходные, на&nbsp;целый день или несколько часов, на&nbsp;свежем воздухе или по&nbsp;музеям&nbsp;&mdash; у&nbsp;нас более двадцати авторских экскурсий по&nbsp;городу.</p>\r\n<p>Выбирайте маршрут и&nbsp;узнавайте Москву вместе с&nbsp;нами!</p>'),
+(3, 'contacts', 'Обратная связь', '<p>Если у&nbsp;вас есть вопросы, идеи маршрутов, конструктивные замечания или предложения&nbsp;&mdash; пожалуйста, свяжитесь с&nbsp;нами любым удобным для вас способом&nbsp;&mdash; мы открыты для общения! А&nbsp;еще лучше&nbsp;&mdash; приезжайте к&nbsp;нам в&nbsp;гости и&nbsp;вступайте в&nbsp;наш клуб&nbsp;&mdash; там, помимо замечательных людей и&nbsp;интересного общения, есть еще вкусный кофе, чай и печенье!</p>');
 
 -- --------------------------------------------------------
 
@@ -365,6 +389,12 @@ ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `pages_all_intro`
+--
+ALTER TABLE `pages_all_intro`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `routs`
 --
 ALTER TABLE `routs`
@@ -439,6 +469,12 @@ ALTER TABLE `fotoReports`
 --
 ALTER TABLE `news`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `pages_all_intro`
+--
+ALTER TABLE `pages_all_intro`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `routs`

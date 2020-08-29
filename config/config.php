@@ -1,7 +1,10 @@
 <?php
+$host = 'localhost';
+$user = 'root';
+$password = '';
+$db_name = 'myMoscow';
 
-// Подключение к БД 'myMoscow'
-$db = mysqli_connect('localhost', 'root', '', 'myMoscow');
+$db = getConnect($host, $user, $password, $db_name);
 mysqli_set_charset($db, 'utf8');
 
 ?>
