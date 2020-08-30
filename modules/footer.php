@@ -1,25 +1,12 @@
-<?php
-    include_once($_SERVER['DOCUMENT_ROOT'] . '/config/config.php');
-
-    // CSS depending on the page
-    $logoStyle = 'logoContacts';
-    $newsStyle = 'news';
-    if ($_SERVER['REQUEST_URI'] === '/contacts.php') {
-        $logoStyle .= ' noAddressLogo';
-        $newsStyle .= ' noAddressNews';
-    };
-
-?>
-
 <footer>
 
     <div class="wrapperEndInfo" id="news">
         <div class="contactsNews">
 
             <!-- Logo & contacts -->
-            <div class="<?= $logoStyle ?>">
+            <div class="logoContacts <?= ($_SERVER['REQUEST_URI'] === '/contacts.php') ? 'noAddressLogo' : '' ?>">
                 <a href="/" class="logoI"><img src="images/logo/logo_mixColorText.svg" alt="Logo"></a>           
-                <!-- Адрес и соц. сети, но не на странице «Контакты» -->
+                <!-- Address and social networks (but not on the page 'Contacts') -->
                 <?php
                     if ($_SERVER['REQUEST_URI'] != '/contacts.php') {
                         include_once($_SERVER['DOCUMENT_ROOT'] . '/modules/address_socNet.php');
@@ -28,7 +15,7 @@
             </div>
             
             <!-- News -->
-            <div class="<?= $newsStyle ?>">
+            <div class="news <?= ($_SERVER['REQUEST_URI'] === '/contacts.php') ? 'noAddressNews' : '' ?>">
                 <h4>Последние новости</h4>
 
                 <?php

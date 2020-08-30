@@ -13,9 +13,13 @@ function getConnect($host, $user, $password, $db_name)
 }
 
 
-function getData($db, $select, $from)
+function getData($db, $select, $from, $where=NULL, $condition=NULL)
 {
-    $query = "SELECT $select FROM $from";
+    if ($where && $condition) {
+        $query = "SELECT $select FROM $from WHERE $where = '{$condition}'";
+    } else {
+        $query = "SELECT $select FROM $from";
+    }
     $result = mysqli_query($db, $query);
 
     return $result;

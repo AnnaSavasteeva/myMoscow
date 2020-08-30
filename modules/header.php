@@ -35,13 +35,9 @@
             $classContacts = 'class = "notActive"';
         break;
     }
-
-
-    $query = "SELECT * FROM `pages_all_intro` WHERE `page_name` = '{$page}'";
-    $result = mysqli_query($db, $query);
-    $row = mysqli_fetch_assoc($result);
-
+    
 ?>
+
 
 <!-- HEAD -->
 <?php
@@ -81,6 +77,10 @@
 
             <!-- Page description -->
             <div class="textInfo">
+                <?php
+                    $result = getData($db, '*', 'pages_all_intro', 'page_name', $page);
+                    $row = mysqli_fetch_assoc($result);
+                ?>
                 <h1><?= $row['title'] ?></h1>
                 <?= $row['description'] ?>
             </div>
