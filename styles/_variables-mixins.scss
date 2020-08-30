@@ -1,0 +1,78 @@
+$textColor: #5b5c5c;
+$textColor2: #233e69;
+
+$logoM: #d13d0f;
+$logoPattern: #0e69b4;
+
+$mainColor: #ffc155;
+
+$bgColor1: #dbf1ff;
+$bgColor2: #00307a;
+
+$cursor: pointer;
+
+$borderRad: 12px;
+
+$trans: .25s;
+
+
+
+@mixin wrapper_width() {
+    margin: 0 auto;
+    padding: 70px 15px;
+    max-width: 1080px;
+}
+
+
+@mixin wrapper_Flex($jc: space-between, $fdir: row) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $jc;
+    flex-direction: $fdir;
+}
+
+
+@mixin fixedPos($myTop: 0) {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: $myTop;
+}
+
+
+@mixin logoIcon($h: 90px) {
+    display: block;
+    height: $h;
+}
+
+
+@mixin logoText() {
+  font-family: logoR;
+  color: $logoPattern;
+}
+
+
+@mixin button() {
+  padding: 10px 20px;
+  border-radius: $borderRad;
+  border: 1px solid $logoPattern;
+  text-align: center;
+  display: inline-block;
+}
+
+
+@mixin routsFoto($url) {
+  background: url($url) center top / cover no-repeat border-box;
+}
+
+
+@mixin formInputs() {
+  border: 2px solid $mainColor;
+}
+
+
+@mixin menu-btn-Lines($angle) {
+  transform-origin: left;
+  transform: rotate($angle);
+  transition: $trans;
+}

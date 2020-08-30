@@ -1,0 +1,84 @@
+footer {
+    .wrapperEndInfo {
+      @include wrapper_width();
+      max-width: 100%;
+      background: $mainColor;
+  
+          .contactsNews {
+            @include wrapper_width();
+            padding: 0;
+            @include wrapper_Flex();
+
+                .logoContacts {
+                  flex-grow: 1;
+                  width: 240px;
+                  margin-right: 70px;
+
+                      // For page 'Contacts'
+                      &.noAddressLogo {
+                        width: 90px;
+                      }
+    
+                      .logoI {
+                            img {@include logoIcon();}
+                        }
+                     
+                      address {margin-top: 20px;}
+
+                      .socNet {margin-top: 25px;}
+                }
+  
+                .news {
+                  flex-grow: 1;
+                  // 340 = 240 (contacts width) + 30 (wrapperEndInfo padding) + 70 (indent from contacts)
+                  width: calc(100% - 340px);
+
+                      // For page 'Contacts'
+                      &.noAddressNews {
+                        // 190 = 90 (logo width) + 30 + 70
+                        width: calc(100% - 190px);
+                      }
+  
+                      p {
+                          margin-bottom: 15px;
+      
+                              &:last-child {margin-bottom: 0;}
+
+                              .date {
+                                color: $logoPattern;
+                                display: block;
+                              }
+                      } 
+                }
+
+                // Adaptiveness
+                @media (max-width: 780px) {
+                    @include wrapper_Flex($fdir: column);
+
+                        .logoContacts {
+                          order: 1;
+                          margin-right: 0;
+
+                              &.noAddressLogo {
+                                margin: 0 auto;
+                              }
+                        }
+
+                        .news, .news.noAddressNews {
+                          margin: 0;
+                          margin-bottom: 35px;
+                          width: 100%;
+                        }
+                  }
+          }
+    }
+
+    .copyright {
+      @include wrapper_width();
+      padding: 30px;
+      max-width: 100%;
+      background: $logoPattern;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+    }
+}

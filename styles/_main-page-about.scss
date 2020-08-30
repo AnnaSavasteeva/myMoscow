@@ -1,0 +1,37 @@
+.wrapperAbout {
+    @include wrapper_Flex();
+
+        .aboutPicture {
+          background: url(../images/main/team_people.jpg) left top / cover no-repeat;
+          min-height: 340px;
+          flex-grow: 1;
+          flex-basis: 345px;
+          min-width: 35%;
+
+              @media (min-width: 570px) and (max-width: 985px) {
+                background-position: center;
+                background-image: url('../images/main/team_people_topView.jpg');
+              }
+        }
+
+        .aboutText {
+          padding: 70px 5%;
+          background: $mainColor;
+          flex-grow: 1;
+          flex-basis: 270px;
+          min-width: 65%;
+
+              h2 {
+                margin-bottom: 15px;
+                text-align: left;
+
+                    &::after {content: none;}
+              }
+
+              p {
+                margin-bottom: 20px;
+              }
+
+              .button {margin-top: 10px;}
+        }
+}
