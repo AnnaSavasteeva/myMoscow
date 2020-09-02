@@ -366,7 +366,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, p {
+p {
   margin: 0;
 }
 
@@ -398,6 +398,7 @@ i {
 }
 
 h1, h2, h3, h4 {
+  margin: 0;
   font-weight: normal;
   text-align: left;
 }
@@ -414,11 +415,14 @@ h1 {
 }
 
 h2 {
-  margin-bottom: 50px;
   font-size: 24px;
   text-align: center;
   color: #0e69b4;
   position: relative;
+}
+
+h2.main {
+  margin-bottom: 50px;
 }
 
 h2::after {
@@ -427,9 +431,9 @@ h2::after {
   left: 0;
   right: 0;
   bottom: -25px;
-  margin: 0 auto;
   width: 160px;
   height: 2px;
+  margin: 0 auto;
   background: #ffc155;
 }
 
@@ -535,11 +539,12 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-top: 5px;
 }
 
 input, textarea {
-  border: 2px solid #ffc155;
   padding: 10px;
+  border: 2px solid #ffc155;
   color: #0e69b4;
   -webkit-appearance: none;
   outline: none;
@@ -550,13 +555,22 @@ input {
   margin-bottom: 15px;
 }
 
-input:nth-of-type(1) {
-  margin-top: 5px;
+input[name="routName"] {
+  background: none;
+  border: none;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 textarea {
   min-height: 150px;
   margin-bottom: 30px;
+}
+
+.routPage input, .routPage textarea {
+  border-color: #0e69b4;
+  border-width: 1px;
 }
 
 .submit {
@@ -885,8 +899,6 @@ textarea {
 }
 
 .wrapperService .wrapperService_Items .service_Item {
-  margin: 0 15px;
-  margin-bottom: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -905,13 +917,15 @@ textarea {
   -ms-flex-preferred-size: 300px;
       flex-basis: 300px;
   min-width: 45%;
+  margin: 0 15px;
+  margin-bottom: 35px;
 }
 
 .wrapperService .wrapperService_Items .service_Item .item_Icon {
-  margin-right: 20px;
+  display: block;
   width: 64px;
   height: 64px;
-  display: block;
+  margin-right: 20px;
 }
 
 .wrapperService .wrapperService_Items .service_Item .item_Text {
@@ -932,9 +946,9 @@ textarea {
 
 @media (max-width: 780px) {
   .wrapperService .wrapperService_Items .service_Item {
-    margin: 0 0 35px;
     -ms-flex-preferred-size: auto;
         flex-basis: auto;
+    margin: 0 0 35px;
   }
 }
 
@@ -954,14 +968,14 @@ textarea {
 }
 
 .wrapperAbout .aboutPicture {
-  background: url(../images/main/team_people.jpg) left top/cover no-repeat;
-  min-height: 340px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   -ms-flex-preferred-size: 345px;
       flex-basis: 345px;
   min-width: 35%;
+  min-height: 340px;
+  background: url(../images/main/team_people.jpg) left top/cover no-repeat;
 }
 
 @media (min-width: 570px) and (max-width: 985px) {
@@ -972,14 +986,14 @@ textarea {
 }
 
 .wrapperAbout .aboutText {
-  padding: 70px 5%;
-  background: #ffc155;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   -ms-flex-preferred-size: 270px;
       flex-basis: 270px;
   min-width: 65%;
+  padding: 70px 5%;
+  background: #ffc155;
 }
 
 .wrapperAbout .aboutText h2 {
@@ -1003,8 +1017,8 @@ textarea {
   margin: 0 auto;
   padding: 70px 15px;
   max-width: 1080px;
-  padding: 70px 0 0;
   max-width: 100%;
+  padding: 70px 0 0;
 }
 
 .wrapperFoto .brief {
@@ -1033,13 +1047,13 @@ textarea {
           flex-grow: 1;
   -ms-flex-preferred-size: 270px;
       flex-basis: 270px;
-  min-width: 25%;
-  min-height: 290px;
   display: block;
+  width: 100%;
+  min-width: 25%;
+  height: auto;
+  min-height: 290px;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100%;
-  height: auto;
 }
 
 .wrapperComments {
@@ -1054,11 +1068,11 @@ textarea {
 }
 
 .wrapperComments .commentSlider .commentItems {
-  margin-top: 10px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 10px;
 }
 
 .wrapperComments .commentSlider .commentItems .comment {
@@ -1079,23 +1093,23 @@ textarea {
 }
 
 .wrapperComments .commentSlider .commentItems .comment .sign img {
+  display: block;
+  width: 74px;
   margin: 0 auto;
   margin-bottom: 10px;
-  width: 74px;
-  display: block;
 }
 
 .wrapperComments .commentSlider .commentItems .comment .sign p {
-  color: #0e69b4;
-  text-align: center;
   text-transform: uppercase;
+  text-align: center;
+  color: #0e69b4;
 }
 
 .wrapperComments .commentSlider .commentItems .comment .text {
+  max-width: 780px;
   margin: 0 auto;
   margin-top: 20px;
   padding: 0 55px;
-  max-width: 780px;
 }
 
 .wrapperComments .commentSlider .commentItems .comment .text p {
@@ -1103,21 +1117,21 @@ textarea {
 }
 
 .wrapperComments .commentSlider .commentItems .comment .text p::before, .wrapperComments .commentSlider .commentItems .comment .text p::after {
+  position: absolute;
   font-size: 70px;
   line-height: 35px;
   color: #0e69b4;
-  position: absolute;
 }
 
 .wrapperComments .commentSlider .commentItems .comment .text p::before {
-  top: -17.5px;
   content: '«';
+  top: -17.5px;
   left: -55px;
 }
 
 .wrapperComments .commentSlider .commentItems .comment .text p::after {
-  bottom: -5px;
   content: '»';
+  bottom: -5px;
   right: -55px;
 }
 
@@ -1127,6 +1141,7 @@ textarea {
 }
 
 .wrapperComments .commentSlider .sliderBtn .leftArrow, .wrapperComments .commentSlider .sliderBtn .rightArrow {
+  display: inline-block;
   border-left: 17px solid transparent;
   border-right: 17px solid transparent;
   border-bottom: 25px solid #0e69b4;
@@ -1134,7 +1149,6 @@ textarea {
   cursor: pointer;
   -webkit-transition: 0.25s;
   transition: 0.25s;
-  display: inline-block;
 }
 
 .wrapperComments .commentSlider .sliderBtn .leftArrow:hover, .wrapperComments .commentSlider .sliderBtn .rightArrow:hover {
@@ -1178,13 +1192,13 @@ textarea {
 }
 
 .wrapperContactUs .contactItems .contactItem {
-  margin: 25px 15px 0;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   -ms-flex-preferred-size: 250px;
       flex-basis: 250px;
   min-width: 25%;
+  margin: 25px 15px 0;
 }
 
 @media (max-width: 780px) {
@@ -1211,7 +1225,6 @@ textarea {
   margin: 0 auto;
   padding: 70px 15px;
   max-width: 1080px;
-  padding-top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1224,6 +1237,7 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  padding-top: 0;
 }
 
 .wrapperAddressForm .address {
@@ -1278,8 +1292,6 @@ textarea {
 }
 
 .wrapperRoutsPOP .rout {
-  margin-bottom: 70px;
-  border-right: 20px solid #ffc155;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1292,32 +1304,34 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  margin-bottom: 70px;
+  border-right: 20px solid #ffc155;
 }
 
 .wrapperRoutsPOP .rout:nth-of-type(even) {
-  border-left: 20px solid #ffc155;
-  border-right: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+  border-left: 20px solid #ffc155;
+  border-right: none;
 }
 
 .wrapperRoutsPOP .rout .routImage {
-  outline: 2px solid #ffc155;
-  outline-offset: -10px;
+  display: block;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   -ms-flex-preferred-size: 270px;
       flex-basis: 270px;
+  width: 100%;
   min-width: 50%;
+  height: auto;
   min-height: 290px;
-  display: block;
+  outline: 2px solid #ffc155;
+  outline-offset: -10px;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100%;
-  height: auto;
 }
 
 .wrapperRoutsPOP .rout .routImage.masterAndMargo {
@@ -1340,14 +1354,14 @@ textarea {
 }
 
 .wrapperRoutsPOP .rout .routText {
-  padding: 35px;
-  padding-top: 20px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   -ms-flex-preferred-size: 270px;
       flex-basis: 270px;
   min-width: 50%;
+  padding: 35px;
+  padding-top: 20px;
 }
 
 .wrapperRoutsPOP .rout .routText p {
@@ -1356,9 +1370,9 @@ textarea {
 
 .wrapperRoutsPOP .rout .routText .price {
   margin: 15px 0;
-  color: #0e69b4;
   font-size: 18px;
   font-weight: bolder;
+  color: #0e69b4;
 }
 
 .wrapperRoutsPOP .rout .routText .button {
@@ -1367,39 +1381,37 @@ textarea {
 
 @media (max-width: 820px) {
   .wrapperRoutsPOP .rout {
-    border: none;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    border: none;
   }
   .wrapperRoutsPOP .rout:nth-of-type(even) {
-    border: none;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    border: none;
   }
   .wrapperRoutsPOP .rout .routImage {
     -ms-flex-preferred-size: auto;
         flex-basis: auto;
   }
   .wrapperRoutsPOP .rout .routText {
-    padding-bottom: 0;
     -ms-flex-preferred-size: auto;
         flex-basis: auto;
+    padding-bottom: 0;
   }
 }
 
 .formReserveWrapper {
-  padding: 15px;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 99;
-  overflow: auto;
+  z-index: 100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1416,12 +1428,12 @@ textarea {
       -ms-flex-align: center;
           align-items: center;
   display: none;
+  padding: 15px;
   background: rgba(255, 193, 85, 0.95);
+  overflow: auto;
 }
 
-.formReserveWrapper .formReserve {
-  display: inline-block;
-  padding: 30px;
+.formReserve {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1438,38 +1450,26 @@ textarea {
       -ms-flex-positive: 1;
           flex-grow: 1;
   max-width: 500px;
+  padding: 30px;
 }
 
-.formReserveWrapper .formReserve .logoI {
+.formReserve .logoI {
   display: block;
   margin-bottom: 15px;
 }
 
-.formReserveWrapper .formReserve .logoI img {
+.formReserve .logoI img {
   display: block;
   height: 90px;
   margin: 0 auto;
 }
 
-.formReserveWrapper .formReserve .reserveBorders {
-  border-color: #0e69b4;
-  border-width: 1px;
-}
-
-.formReserveWrapper .formReserve input[name="routName"] {
-  border: none;
-  background: none;
-  font-size: 18px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
 .closeForm {
-  width: 20px;
-  height: 20px;
   position: absolute;
   top: 15px;
   right: 15px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   -webkit-transition: 0.25s;
   transition: 0.25s;
@@ -1477,14 +1477,14 @@ textarea {
 
 .closeForm::before, .closeForm::after {
   content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  background: #0e69b4;
   position: absolute;
   top: 0;
   bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
   margin: auto;
+  background: #0e69b4;
 }
 
 .closeForm::before {

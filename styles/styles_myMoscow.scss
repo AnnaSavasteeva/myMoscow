@@ -3,6 +3,7 @@
 
 
 
+
 @font-face {
   src: url(../fonts/PT_Sans/PTSans-Regular.ttf);
   font-family: ptSans;
@@ -15,7 +16,8 @@
 
 
 
-// GENERAL rules
+
+// GENERAL
 
 body, header, footer, main, section,
 div, img, fieldset, textarea, input {
@@ -30,7 +32,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, p {margin: 0;}
+p {margin: 0;}
 
 address {
   font-style: normal;
@@ -54,7 +56,7 @@ i {
   @include logoText();
 
   span {                           
-      &:nth-of-type(1) {color: $logoM;}
+    &:nth-of-type(1) {color: $logoM;}
   }
 }
 
@@ -62,6 +64,7 @@ i {
 
 // Headings
 h1, h2, h3, h4 {
+  margin: 0;
   font-weight: normal;
   text-align: left;
 }
@@ -76,11 +79,12 @@ h1 {
 }
 
 h2 {
-  margin-bottom: 50px;
   font-size: 24px;
   text-align: center;
   color: $logoPattern;
   position: relative;
+
+  &.main {margin-bottom: 50px;}
 
   &::after {
     content: "";
@@ -88,9 +92,9 @@ h2 {
     left: 0;
     right: 0;
     bottom: -25px;
-    margin: 0 auto;
     width: 160px;
     height: 2px;
+    margin: 0 auto;
     background: $mainColor;
   }
 }
@@ -173,136 +177,21 @@ a, a:visited {
 
 
 
-// Form
-form {
-  @include wrapper_Flex($fdir: column);
-}
 
-input, textarea {
-  @include formInputs();
-  padding: 10px;
-  color: $logoPattern;
-  -webkit-appearance: none;
-  outline: none;
-}
-
-input {
-  width: 100%;
-  margin-bottom: 15px;
-
-  &:nth-of-type(1) {margin-top: 5px;}
-}
-
-textarea {
-  min-height: 150px;
-  margin-bottom: 30px;
-}
-
-.submit {
-  margin: 0 auto;
-  text-align: center;
-
-  input {
-    @include button();
-    margin-bottom: 0;
-    background: transparent;
-    font-size: 14px;
-    line-height: 1.5;
-    letter-spacing: 1px;
-    transition: $trans;
-    cursor: $cursor;
-
-    &:hover {
-      border-color: $logoM;
-      color: $logoM;
-    }
-  }
-}
-
-
-
-// Answer to user about form submition
-.userResponseWrapper {
-  @include wrapper_Flex(center);
-  align-items: center;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 15px;
-
-  .userResponse {
-    @include wrapper_Flex(center, column);
-    align-items: center;
-    flex-grow: 1;
-    max-width: 350px;
-    padding: 30px;
-    background: $mainColor;
-    border: 2px solid $logoM;
-    border-radius: $borderRad;
-    text-align: center;
-    color: $logoPattern;
-
-    .logoI {
-      display: block;
-      margin-bottom: 15px;
-
-      img {
-        @include logoIcon(60px);
-        margin: 0 auto;
-      }
-    }
-
-    p {
-      span {color: $logoM;}
-    }
-
-    .button {
-      @include button();
-      margin-top: 20px;
-      transition: $trans;
-
-      &:hover {
-        border-color: $logoM;
-        color: $logoM;
-      }
-    }
-  }
-}
-
-
+// FORM
+@import 'form';
 
 // INTRO
 @import 'intro';
 
-
-
 // MAIN page
-
-// Services
-@import 'main-page-services';
-
-// About us
-@import 'main-page-about';
-
-// Photo
-@import 'main-page-photo';
-
-// Testimonials
-@import 'main-page-testimonials';
-
-
+@import 'main-page';
 
 // CONTACTS page
 @import 'contacts-page';
 
-
-
 // ROUTS page
 @import 'routs-page';
-
-
 
 // FOOTER
 @import 'footer';

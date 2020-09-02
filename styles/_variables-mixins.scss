@@ -66,11 +66,6 @@ $trans: .25s;
 }
 
 
-@mixin formInputs() {
-  border: 2px solid $mainColor;
-}
-
-
 @mixin menu-btn-Lines($angle) {
   transform-origin: left;
   transform: rotate($angle);

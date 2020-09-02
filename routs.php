@@ -33,12 +33,12 @@
     <div class="formReserve">
         <a href='/' class='logoI'><img src='/images/logo/logo_mixColorText.svg' alt='Logo'></a>
         <form action="handlers/form_Routs.php" method="POST" class="routPage">
-            <input type="text" name="routName" class="reserveBorders">
-            <input type="text" name="name" class="reserveBorders" placeholder="ФИО">
-            <input type="email" name="email" class="reserveBorders" placeholder="E-mail">
-            <input type="text" name="phonenumber" class="reserveBorders" placeholder="Телефон">
+            <input type="text" name="routName">
+            <input type="text" name="name" placeholder="ФИО">
+            <input type="email" name="email" placeholder="E-mail">
+            <input type="text" name="phonenumber" placeholder="Телефон">
 
-            <textarea name="message" class="reserveBorders" placeholder="Комментарий"></textarea>
+            <textarea name="message" placeholder="Комментарий"></textarea>
             
             <div class="submit">
                 <input type="submit" value="Забронировать">

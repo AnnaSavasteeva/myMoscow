@@ -1,78 +1,82 @@
 .wrapperContactUs {
-    @include wrapper_width();
-    padding-bottom: 35px;
+  @include wrapper_width();
+  padding-bottom: 35px;
 
-      h2 {
-        margin-bottom: 25px;
+    h2 {
+      margin-bottom: 25px;
+    }
+
+    .contactItems {
+      @include wrapper_Flex();
+
+      .contactItem {
+        flex-grow: 1;
+        flex-basis: 250px;
+        min-width: 25%;
+        margin: 25px 15px 0;
       }
 
-      .contactItems {
-        @include wrapper_Flex();
-
-            .contactItem {
-              margin: 25px 15px 0;
-              flex-grow: 1;
-              flex-basis: 250px;
-              min-width: 25%;
-            }
-
-            // Adaptiveness
-            @media (max-width: 780px) {
-              .contactItem {
-                margin-left: 0;
-                margin-right: 0;
-              }
-            }
+      // Adaptiveness
+      @media (max-width: 780px) {
+        .contactItem {
+          margin-left: 0;
+          margin-right: 0;
+        }
       }
-  }
+    }
+}
+
+
 
 
 // Map
-  .map {
-    @include wrapper_width();
-    padding: 0 15px;
+.map {
+  @include wrapper_width();
+  padding: 0 15px;
 
-        iframe {
-          width: 100%;
-          height: 370px;
-          border: 2px solid $mainColor;
-        }
+  iframe {
+    width: 100%;
+    height: 370px;
+    border: 2px solid $mainColor;
   }
+}
+
+
 
 
 // Address and form
 .wrapperAddressForm {
   @include wrapper_width();
-  padding-top: 0;
   @include wrapper_Flex();
+  padding-top: 0;
 
-      .address {
-        margin: 35px 15px 0;
-        flex-grow: 1;
-        flex-basis: 270px;
-        min-width: 25%;
+  .address {
+    margin: 35px 15px 0;
+    flex-grow: 1;
+    flex-basis: 270px;
+    min-width: 25%;
 
-            address {
-                margin-top: 0;
+    address {
+      margin-top: 0;
 
-                    p {color: $textColor;}
+      p {color: $textColor;}
 
-                    .socNet {margin-top: 25px;}
-            }
-      }
+      .socNet {margin-top: 25px;}
+    }
+  }
 
-      .form {
-        margin: 35px 15px 0;
-        flex-grow: 1;
-        flex-basis: 270px;
-        min-width: 65%;
-      }
+  .form {
+    margin: 35px 15px 0;
+    flex-grow: 1;
+    flex-basis: 270px;
+    min-width: 65%;
+  }
 
-      // Adaptiveness
-      @media (max-width: 780px) {
-        .address, .form {
-          margin-left: 0;
-          margin-right: 0;
-        }
-      }
+  // Adaptiveness
+  @media (max-width: 780px) {
+    .address, .form {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 }

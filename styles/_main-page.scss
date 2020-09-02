@@ -1,0 +1,205 @@
+// Services
+.wrapperService {
+	@include wrapper_width();
+	padding-bottom: 35px;
+
+	.wrapperService_Items {
+		@include wrapper_Flex();
+		
+		.service_Item {
+			@include wrapper_Flex();
+			flex-grow: 1;
+			flex-basis: 300px;
+			min-width: 45%;
+			margin: 0 15px;
+			margin-bottom: 35px;
+
+			.item_Icon {
+				display: block;
+				width: 64px;
+				height: 64px;
+				margin-right: 20px;
+			}
+
+			.item_Text {
+				flex-grow: 1;
+				width: calc(100% - 84px);
+
+				.logoT {
+					@include logoText();
+
+					span {                           
+							&:nth-of-type(1) {color: $logoM;}
+					}
+				}
+			}
+
+			@media (max-width: 780px) {
+				flex-basis: auto;
+				margin: 0 0 35px;
+			}
+		}
+	}
+}
+
+
+
+// About us
+.wrapperAbout {
+	@include wrapper_Flex();
+
+	.aboutPicture {
+		flex-grow: 1;
+		flex-basis: 345px;
+		min-width: 35%;
+		min-height: 340px;
+		background: url(../images/main/team_people.jpg) left top / cover no-repeat;
+
+		@media (min-width: 570px) and (max-width: 985px) {
+			background-position: center;
+			background-image: url('../images/main/team_people_topView.jpg');
+		}
+	}
+
+	.aboutText {
+		flex-grow: 1;
+		flex-basis: 270px;
+		min-width: 65%;
+		padding: 70px 5%;
+		background: $mainColor;
+
+		h2 {
+			margin-bottom: 15px;
+			text-align: left;
+
+			&::after {content: none;}
+		}
+
+		p {margin-bottom: 20px;}
+
+		.button {margin-top: 10px;}
+	}
+}
+
+
+
+// Photo
+.wrapperFoto {
+	@include wrapper_width();
+	max-width: 100%;
+	padding: 70px 0 0;
+
+	.brief {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+
+	.foto {
+		@include wrapper_Flex();
+
+		.fotoBox {
+			flex-grow: 1;
+			flex-basis: 270px;
+			display: block;
+			width: 100%;
+			min-width: 25%;
+			height: auto;
+			min-height: 290px;
+			object-fit: cover;
+		}
+	}
+}
+
+
+
+// Testimonials
+.wrapperComments {
+	@include wrapper_width();
+
+	.commentSlider {
+		position: relative;
+		overflow: hidden;
+
+		.commentItems {
+			position: relative;
+			display: flex;
+			margin-top: 10px;
+
+			.comment {
+				margin-top: 10px;
+				min-width: 100%;
+				@include wrapper_Flex($jc: flex-start, $fdir: column);
+
+				.sign {
+					img {
+						display: block;
+						width: 74px;
+						margin: 0 auto;
+						margin-bottom: 10px;
+					}
+
+					p {
+						text-transform: uppercase;
+						text-align: center;
+						color: $logoPattern;
+					}
+				}
+
+				.text {
+					max-width: 780px;
+					margin: 0 auto;
+					margin-top: 20px;
+					padding: 0 55px;
+
+					p {
+						position: relative;
+
+						&::before, &::after {
+							position: absolute;
+							font-size: 70px;
+							line-height: 35px;
+							color: $logoPattern;
+						}
+
+						&::before {
+							content: '«';
+							top: -17.5px;
+							left: -55px;
+						}
+
+						&::after {
+							content: '»';
+							bottom: -5px;
+							right: -55px;
+						}
+					}
+				}
+			}
+		}
+
+		.sliderBtn {
+			margin-top: 50px;
+			text-align: center;
+
+			.leftArrow, .rightArrow {
+				display: inline-block;
+				border-left: 17px solid transparent;
+				border-right: 17px solid transparent;
+				border-bottom: 25px solid $logoPattern;
+				border-radius: 5px;
+				cursor: $cursor;
+				transition: $trans;
+
+				&:hover {border-bottom-color: $logoM;}
+			}
+
+			.leftArrow {
+				transform: rotate(-90deg);
+			}
+
+			.rightArrow {
+				transform: rotate(90deg);;
+			}
+		}
+	}
+}

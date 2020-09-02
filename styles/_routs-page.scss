@@ -1,161 +1,141 @@
 .wrapperRoutsPOP {
-    @include wrapper_width();
-    max-width: 1280px;
-    padding-bottom: 0;
+  @include wrapper_width();
+  max-width: 1280px;
+  padding-bottom: 0;
 
-        h2 {margin-bottom: 60px;}
+  h2 {margin-bottom: 60px;}
 
-        .rout {
-          margin-bottom: 70px;
-          border-right: 20px solid $mainColor;
-          @include wrapper_Flex();
+  .rout {
+    @include wrapper_Flex();
+    margin-bottom: 70px;
+    border-right: 20px solid $mainColor;
 
-              &:nth-of-type(even) {
-                border-left: 20px solid $mainColor;
-                border-right: none;
-                flex-direction: row-reverse;
-              }
+    &:nth-of-type(even) {
+      flex-direction: row-reverse;
+      border-left: 20px solid $mainColor;
+      border-right: none;
+    }
 
-              .routImage {
-                outline: 2px solid $mainColor;
-                outline-offset: -10px;
-                flex-grow: 1;
-                flex-basis: 270px;
-                min-width: 50%;
-                min-height: 290px;
-                display: block;
-                object-fit: cover;
-                width: 100%;
-                height: auto;
+    .routImage {
+      display: block;
+      flex-grow: 1;
+      flex-basis: 270px;
+      width: 100%;
+      min-width: 50%;
+      height: auto;
+      min-height: 290px;
+      outline: 2px solid $mainColor;
+      outline-offset: -10px;
+      object-fit: cover;
 
-                    &.masterAndMargo {
-                      object-position: 70% 0;
+      &.masterAndMargo {
+        object-position: 70% 0;
+        @media (max-width: 860px) {object-position: 100% 0;}
+        @media (max-width: 420px) {object-position: 60% 0;}
+      }
+    }
 
-                      @media (max-width: 860px) {
-                        object-position: 100% 0;
-                      }
-                      @media (max-width: 420px) {
-                        object-position: 60% 0;
-                      }
-                    }
-              }
+    .routText {
+      flex-grow: 1;
+      flex-basis: 270px;
+      min-width: 50%;
+      padding: 35px;
+      padding-top: 20px;
 
-              .routText {
-                padding: 35px;
-                padding-top: 20px;
-                flex-grow: 1;
-                flex-basis: 270px;
-                min-width: 50%;
+      p {margin-bottom: 5px;}
 
-                    p {margin-bottom: 5px;}
+      .price {
+        margin: 15px 0;
+        font-size: 18px;
+        font-weight: bolder;
+        color: $logoPattern;
+      }
 
-                    .price {
-                      margin: 15px 0;
-                      color: $logoPattern;
-                      font-size: 18px;
-                      font-weight: bolder;
-                    }
+      .button {margin-top: 5px;}
+    }
 
-                    .button {margin-top: 5px;}
-              }
+    @media (max-width: 820px) {
+      flex-direction: column;
+      border: none;
 
-              @media (max-width: 820px) {
-                border: none;
-                flex-direction: column;
+      &:nth-of-type(even) {
+        flex-direction: column;
+        border: none;
+      }
 
-                    &:nth-of-type(even) {
-                      border: none;
-                      flex-direction: column;
-                    }
+      .routImage {flex-basis: auto;}
 
-                    .routImage {flex-basis: auto;}
-
-                    .routText {
-                      padding-bottom: 0;
-                      flex-basis: auto;
-                    }
-              }
-        }
+      .routText {
+        flex-basis: auto;
+        padding-bottom: 0;
+      }
+    }
   }
+}
 
-  // Form
-  .formReserveWrapper {
-    padding: 15px;
-    position: fixed;
+
+
+
+// Block for form
+.formReserveWrapper {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	@include wrapper_Flex(center);
+	align-items: center;
+  display: none;
+  padding: 15px;
+  background: rgba(255, 193, 85, 0.95);
+  overflow: auto;
+}
+
+.formReserve {
+	@include wrapper_Flex(flex-start, column);
+	flex-grow: 1;
+  max-width: 500px;
+  padding: 30px;
+
+	.logoI {
+		display: block;
+		margin-bottom: 15px;
+
+		img {
+			@include logoIcon();
+			margin: 0 auto;
+		}
+	}
+}
+
+// Close icon
+.closeForm {
+  position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 20px;
+	height: 20px;
+	cursor: $cursor;
+	transition: $trans;
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 99;
-    overflow: auto;
-    @include wrapper_Flex(center);
-    align-items: center;
-    display: none;
-    background: rgba(255, 193, 85, 0.95);
-
-        .formReserve {
-          display: inline-block;
-          padding: 30px;
-          @include wrapper_Flex(flex-start, column);
-          flex-grow: 1;
-          max-width: 500px;
-
-              .logoI {
-                display: block;
-                margin-bottom: 15px;
-
-                    img {
-                      @include logoIcon();
-                      margin: 0 auto;
-                    }
-              }
-
-              .reserveBorders {
-                border-color: $logoPattern;
-                border-width: 1px;
-              }
-
-              input[name="routName"] {
-                border: none;
-                background: none;
-                font-size: 18px;
-                text-transform: uppercase;
-                text-align: center;
-              }
-        }      
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: auto;
+    background: $logoPattern;
   }
 
-  // Form close icon
-  .closeForm {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    cursor: $cursor;
-    transition: $trans;
+  &::before {transform: rotate(45deg);}
 
-        &::before, &::after {
-          content: "";
-          display: block;
-          width: 100%;
-          height: 2px;
-          background: $logoPattern;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          margin: auto;
-        }
+  &::after {transform: rotate(-45deg);}
 
-        &::before {
-          transform: rotate(45deg);
-        }
-
-        &::after {
-          transform: rotate(-45deg);
-        }
-
-        &:hover {
-          &::before, &::after {background: $logoM;} 
-        }
+  &:hover {
+    &::before, &::after {background: $logoM;} 
+  }
 }

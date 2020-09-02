@@ -140,10 +140,10 @@ $(window).keyup(function (event) {
 $("form.routPage").submit(function (e) {
     let nameValue = $("[name=name]").val();
     let emailValue = $("[name=email]").val();
-    let tellValue = $("[name=mobile]").val();
+    let tellValue = $("[name=phonenumber]").val();
 
     if (nameValue == "" || emailValue == "" || tellValue == "") {
-        $("[name]").attr("placeholder", "Заполните поле");
+        $("[name=name], [name=email], [name=phonenumber]").attr("placeholder", "Заполните поле");
         e.preventDefault();
     }
 });

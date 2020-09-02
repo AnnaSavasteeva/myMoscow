@@ -7,7 +7,7 @@
 <main>
     <!-- Services -->
     <section class="wrapperService" id="service">
-        <h2>Что мы предлагаем</h2>
+        <h2 class="main">Что мы предлагаем</h2>
 
         <p class="brief">
             Наша главная цель&nbsp;&mdash; рассказать о Москве так, чтобы это было интересно всем!
@@ -34,7 +34,7 @@
     <section class="wrapperAbout" id="about">
         <div class="aboutPicture"></div>
         <div class="aboutText">
-            <h2>Кто мы такие</h2>
+            <h2 class="main">Кто мы такие</h2>
 
             <?php
                 $resultAbout = getData($db, '*', 'about');
@@ -50,7 +50,7 @@
 
     <!-- Photo -->
     <section class="wrapperFoto" id="foto">
-        <h2>Москва в фотографиях</h2>
+        <h2 class="main">Москва в фотографиях</h2>
 
         <p class="brief">Проще всего рассказать обо&nbsp;всем в&nbsp;фотографиях: смотрите наши фотоотчеты и&nbsp;делитесь своими снимками.</p>
         
@@ -67,7 +67,7 @@
 
     <!-- Testimonials -->
     <section class="wrapperComments" id="testimon">
-        <h2>Отзывы</h2>
+        <h2 class="main">Отзывы</h2>
         <div class="commentSlider">
             <div class="commentItems">
                 <?php

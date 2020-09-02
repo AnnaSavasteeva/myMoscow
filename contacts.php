@@ -46,7 +46,6 @@
         <div class="form">
             <h3 class="contacts">Обратная связь</h3>
             <form action="handlers/form_Contact.php" method="POST" class="contactPage">
-            <!-- <form action="" method="POST" class="contactPage"> -->
                 <input type="text" name="name" placeholder="ФИО">
                 <input type="e-mail" name="email" placeholder="E-mail">
                 <input type="text" name="phonenumber" placeholder="Телефон">

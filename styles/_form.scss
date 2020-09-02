@@ -1,0 +1,111 @@
+form {
+	@include wrapper_Flex($fdir: column);
+	padding-top: 5px;
+}
+  
+input, textarea {
+	padding: 10px;
+	border: 2px solid $mainColor;
+	color: $logoPattern;
+	-webkit-appearance: none;
+	outline: none;
+}
+  
+input {
+  width: 100%;
+  margin-bottom: 15px;
+
+	&[name="routName"] {
+		background: none;
+		border: none;
+		font-size: 18px;
+		text-transform: uppercase;
+		text-align: center;
+	}
+}
+  
+textarea {
+  min-height: 150px;
+  margin-bottom: 30px;
+}
+
+// For page 'Routs'
+.routPage {
+	input, textarea {
+		border-color: $logoPattern;
+		border-width: 1px;
+	}
+}
+  
+.submit {
+  margin: 0 auto;
+  text-align: center;
+  
+  input {
+    @include button();
+    margin-bottom: 0;
+    background: transparent;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    transition: $trans;
+    cursor: $cursor;
+  
+    &:hover {
+      border-color: $logoM;
+      color: $logoM;
+    }
+  }
+}
+  
+  
+  
+// Answer to user about form submition
+.userResponseWrapper {
+  @include wrapper_Flex(center);
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+
+  .userResponse {
+    @include wrapper_Flex(center, column);
+    align-items: center;
+    flex-grow: 1;
+    max-width: 350px;
+    padding: 30px;
+    background: $mainColor;
+    border: 2px solid $logoM;
+    border-radius: $borderRad;
+    text-align: center;
+    color: $logoPattern;
+
+    .logoI {
+      display: block;
+      margin-bottom: 15px;
+
+      img {
+        @include logoIcon(60px);
+        margin: 0 auto;
+      }
+    }
+
+    p {
+      span {color: $logoM;}
+    }
+
+    .button {
+      @include button();
+      margin-top: 20px;
+      transition: $trans;
+
+      &:hover {
+        border-color: $logoM;
+        color: $logoM;
+      }
+    }
+  }
+}
