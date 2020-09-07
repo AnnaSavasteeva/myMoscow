@@ -1,10 +1,5 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$db_name = 'myMoscow';
 
-$db = getConnect($host, $user, $password, $db_name);
-mysqli_set_charset($db, 'utf8');
+include_once($_SERVER['DOCUMENT_ROOT'] . '/config/myFunctions.php');
 
-?>
+include_once($_SERVER['DOCUMENT_ROOT'] . '/config/db-connect.php');

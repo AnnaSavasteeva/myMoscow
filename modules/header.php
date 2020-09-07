@@ -1,8 +1,8 @@
 <?php
-    include_once($_SERVER['DOCUMENT_ROOT'] . '/config/myFunctions.php');
     include_once($_SERVER['DOCUMENT_ROOT'] . '/config/config.php');
     
-    
+
+    // Navigation
     $anchors = '/';
     $bg = '';
     $button = 'Вернуться на главную';
@@ -14,6 +14,7 @@
     $hrefMain = '/';
     $hrefRouts = 'routs.php';
     $page = 'main';
+
     switch ($_SERVER['REQUEST_URI']) {
         case '/':
             $anchors = '';
@@ -86,7 +87,9 @@
             </div>
 
             <div>
-                <a href="<?= $hrefButton ?>" class="button"><?= $button ?></a>
+                <a href="<?= $hrefButton ?>" class="button">
+                    <?= $button ?>
+                </a>
             </div>
 
         </div>
